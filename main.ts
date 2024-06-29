@@ -2,17 +2,17 @@
 // Write a simple asynchronous TypeScript function fetchGreeting that returns a 
 // greeting message after a 2-second delay using setTimeout.
 
-// import chalk from "chalk";
-// async function fetchGreeting() {
-//     await setTimeout(() => {
-//         let  greeting =   " Hello Eid Mubarak! "
-//     console.log(greeting)
-//     return greeting
+import chalk from "chalk";
+async function fetchGreeting() {
+    await setTimeout(() => {
+        let  greeting =   " Hello Eid Mubarak! "
+    console.log(greeting)
+    return greeting
 
-//     }, 2000)
+    }, 2000)
 
-// } ;
-// fetchGreeting()
+} ;
+fetchGreeting()
 
 
 
@@ -20,13 +20,13 @@
 // Write a function simulateTask that simulates a task by logging "Task started",
 // waits for 1 second, and then logs "Task completed". Use setTimeout for the delay.
 
-// function simulateTask(){
-//     console.log(chalk.yellow("Task started..."))
-//      setTimeout(() => {
-//         console.log(chalk.green("Task Completed!"))
-//      }, 1000);
-// }
-// simulateTask()
+function simulateTask(){
+    console.log(chalk.yellow("Task started..."))
+     setTimeout(() => {
+        console.log(chalk.green("Task Completed!"))
+     }, 1000);
+}
+simulateTask()
 
 
 
@@ -34,23 +34,23 @@
 // Question # 3
 // Write a function fetchData that returns a Promise which resolves with the string
 // "Data fetched successfully!" after a delay of 1 second.
-// let myPromise = new Promise((resolve, reject) => {
-// setTimeout(() => {
+let myPromise = new Promise((resolve, reject) => {
+setTimeout(() => {
 
-//         console.log(chalk.yellow("promise pending..."))
-//         console.log(chalk.green("promise resolved !"))
-//         resolve("Data fetched successfully !")
+        console.log(chalk.yellow("promise pending..."))
+        console.log(chalk.green("promise resolved !"))
+        resolve("Data fetched successfully !")
 
-//     }, 1000);
+    }, 1000);
 
-// })
-// async function fetchData1() {
+})
+async function fetchData1() {
 
-//     await  myPromise.then((response) => {
-//         console.log(response)
-//     })
-// }
-// fetchData1()
+    await  myPromise.then((response) => {
+        console.log(response)
+    })
+}
+fetchData1()
 
 
 
@@ -87,26 +87,26 @@ fetchWithError().then((result)=>{
 // Write a function executeSequentially that executes two functions fetchData and
 // processData sequentially using Promises, and logs the results in the order they are CANCELLED.
 
-// let fetchData=()=>{
-//       return new Promise((resolve,reject)=>{
-//         resolve(chalk.green("Data fetched successfully!"))
+let fetchData=()=>{
+      return new Promise((resolve,reject)=>{
+        resolve(chalk.green("Data fetched successfully!"))
 
-//     })
+    })
 
-// }
+}
 
-// let processData=()=>{
-//     return new Promise((resolve,reject)=>{
-//         reject(chalk.red("Data processing failed..."))          
+let processData=()=>{
+    return new Promise((resolve,reject)=>{
+        reject(chalk.red("Data processing failed..."))          
 
-//     })
-// }
-// function executeSequentially(){
-//     fetchData().then((response)=>{
-//          console.log(response);processData().catch((err)=>{
-//             console.log(err)
-//     })
-//     })
+    })
+}
+function executeSequentially(){
+    fetchData().then((response)=>{
+         console.log(response);processData().catch((err)=>{
+            console.log(err)
+    })
+    })
     
-// }
-// executeSequentially()
+}
+executeSequentially()
